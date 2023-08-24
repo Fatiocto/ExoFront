@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)https://etherpad.wikimedia.org/p/DOCKER -->
+<html class="pad  super-light-toolbar super-light-editor light-background" lang="fr" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  
+  <title>DOCKER | Etherpad</title>
+  <script>
+    /*
+    |@licstart  The following is the entire license notice for the
+    JavaScript code in this page.|
+
+    Copyright 2011 Peter Martischka, Primary Technology.
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+    |@licend  The above is the entire license notice
+    for the JavaScript code in this page.|
+    */
+  </script>
+  <script src="./DOCKER _ Etherpad_files/basic_error_handler.js"></script>
+
+  
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+  <link rel="shortcut icon" href="https://etherpad.wikimedia.org/favicon.ico">
+
+  
+  <link href="./DOCKER _ Etherpad_files/pad.css" rel="stylesheet">
+
+  
+  <link href="./DOCKER _ Etherpad_files/pad(1).css" rel="stylesheet">
+  
+
+  <style title="dynamicsyntax"></style>
+  
+
+  <link rel="localizations" type="application/l10n+json" href="https://etherpad.wikimedia.org/locales.json">
+  <script type="text/javascript" src="./DOCKER _ Etherpad_files/html10n.js"></script>
+  <script type="text/javascript" src="./DOCKER _ Etherpad_files/l10n.js"></script>
+</head>
+<body class="readwrite">
+  
+
+  <!----------------------------->
+  <!--------- TOOLBAR ----------->
+  <!----------------------------->
+  <div id="editbar" class="toolbar editor-scrolled disabledtoolbar" style="display: flex;">
+      <div id="toolbar-overlay" style="display: block;"></div>
+
+      <ul class="menu_left" role="toolbar">
+          
+          <li data-type="button" data-key="bold"><a class="grouped-left" data-l10n-id="pad.toolbar.bold.title" title="Gras (Ctrl+B)" aria-label="Gras (Ctrl+B)"><button class=" buttonicon buttonicon-bold" data-l10n-id="pad.toolbar.bold.title" title="Gras (Ctrl+B)" aria-label="Gras (Ctrl+B)"></button></a></li>
+<li data-type="button" data-key="italic"><a class="grouped-middle" data-l10n-id="pad.toolbar.italic.title" title="Italique (Ctrl+I)" aria-label="Italique (Ctrl+I)"><button class=" buttonicon buttonicon-italic" data-l10n-id="pad.toolbar.italic.title" title="Italique (Ctrl+I)" aria-label="Italique (Ctrl+I)"></button></a></li>
+<li data-type="button" data-key="underline"><a class="grouped-middle" data-l10n-id="pad.toolbar.underline.title" title="Souligné (Ctrl+U)" aria-label="Souligné (Ctrl+U)"><button class=" buttonicon buttonicon-underline" data-l10n-id="pad.toolbar.underline.title" title="Souligné (Ctrl+U)" aria-label="Souligné (Ctrl+U)"></button></a></li>
+<li data-type="button" data-key="strikethrough"><a class="grouped-right" data-l10n-id="pad.toolbar.strikethrough.title" title="Barré (Ctrl+5)" aria-label="Barré (Ctrl+5)"><button class=" buttonicon buttonicon-strikethrough" data-l10n-id="pad.toolbar.strikethrough.title" title="Barré (Ctrl+5)" aria-label="Barré (Ctrl+5)"></button></a></li><li class="separator"></li><li data-type="button" data-key="insertorderedlist"><a class="grouped-left" data-l10n-id="pad.toolbar.ol.title" title="Liste ordonnée (Ctrl+Shift+N)" aria-label="Liste ordonnée (Ctrl+Shift+N)"><button class=" buttonicon buttonicon-insertorderedlist" data-l10n-id="pad.toolbar.ol.title" title="Liste ordonnée (Ctrl+Shift+N)" aria-label="Liste ordonnée (Ctrl+Shift+N)"></button></a></li>
+<li data-type="button" data-key="insertunorderedlist"><a class="grouped-middle" data-l10n-id="pad.toolbar.ul.title" title="Liste non ordonnée (Ctrl+Shift+L)" aria-label="Liste non ordonnée (Ctrl+Shift+L)"><button class=" buttonicon buttonicon-insertunorderedlist" data-l10n-id="pad.toolbar.ul.title" title="Liste non ordonnée (Ctrl+Shift+L)" aria-label="Liste non ordonnée (Ctrl+Shift+L)"></button></a></li>
+<li data-type="button" data-key="indent"><a class="grouped-middle" data-l10n-id="pad.toolbar.indent.title" title="Indenter (TAB)" aria-label="Indenter (TAB)"><button class=" buttonicon buttonicon-indent" data-l10n-id="pad.toolbar.indent.title" title="Indenter (TAB)" aria-label="Indenter (TAB)"></button></a></li>
+<li data-type="button" data-key="outdent"><a class="grouped-right" data-l10n-id="pad.toolbar.unindent.title" title="Désindenter (Maj+TAB)" aria-label="Désindenter (Maj+TAB)"><button class=" buttonicon buttonicon-outdent" data-l10n-id="pad.toolbar.unindent.title" title="Désindenter (Maj+TAB)" aria-label="Désindenter (Maj+TAB)"></button></a></li><li class="separator"></li><li data-type="button" data-key="undo"><a class="grouped-left" data-l10n-id="pad.toolbar.undo.title" title="Annuler (Ctrl+Z)" aria-label="Annuler (Ctrl+Z)"><button class=" buttonicon buttonicon-undo" data-l10n-id="pad.toolbar.undo.title" title="Annuler (Ctrl+Z)" aria-label="Annuler (Ctrl+Z)"></button></a></li>
+<li data-type="button" data-key="redo"><a class="grouped-right" data-l10n-id="pad.toolbar.redo.title" title="Rétablir (Ctrl+Y)" aria-label="Rétablir (Ctrl+Y)"><button class=" buttonicon buttonicon-redo" data-l10n-id="pad.toolbar.redo.title" title="Rétablir (Ctrl+Y)" aria-label="Rétablir (Ctrl+Y)"></button></a></li><li class="separator"></li><li data-type="button" data-key="clearauthorship"><a class="" data-l10n-id="pad.toolbar.clearAuthorship.title" title="Effacer le surlignage par auteur (Ctrl+Shift+C)" aria-label="Effacer le surlignage par auteur (Ctrl+Shift+C)"><button class=" buttonicon buttonicon-clearauthorship" data-l10n-id="pad.toolbar.clearAuthorship.title" title="Effacer le surlignage par auteur (Ctrl+Shift+C)" aria-label="Effacer le surlignage par auteur (Ctrl+Shift+C)"></button></a></li>
+          
+      </ul>
+      <ul class="menu_right" role="toolbar">
+          
+          <li data-type="button" data-key="import_export"><a class="grouped-left" data-l10n-id="pad.toolbar.import_export.title" title="Importer/Exporter des formats de fichiers différents" aria-label="Importer/Exporter des formats de fichiers différents"><button class=" buttonicon buttonicon-import_export" data-l10n-id="pad.toolbar.import_export.title" title="Importer/Exporter des formats de fichiers différents" aria-label="Importer/Exporter des formats de fichiers différents"></button></a></li>
+<li data-type="button" data-key="showTimeSlider"><a class="grouped-middle" data-l10n-id="pad.toolbar.timeslider.title" title="Historique dynamique" aria-label="Historique dynamique"><button class=" buttonicon buttonicon-history" data-l10n-id="pad.toolbar.timeslider.title" title="Historique dynamique" aria-label="Historique dynamique"></button></a></li>
+<li data-type="button" data-key="savedRevision"><a class="grouped-right" data-l10n-id="pad.toolbar.savedRevision.title" title="Enregistrer la révision" aria-label="Enregistrer la révision"><button class=" buttonicon buttonicon-savedRevision" data-l10n-id="pad.toolbar.savedRevision.title" title="Enregistrer la révision" aria-label="Enregistrer la révision"></button></a></li><li class="separator"></li><li data-type="button" data-key="settings"><a class="grouped-left" data-l10n-id="pad.toolbar.settings.title" title="Paramètres" aria-label="Paramètres"><button class=" buttonicon buttonicon-settings" data-l10n-id="pad.toolbar.settings.title" title="Paramètres" aria-label="Paramètres"></button></a></li>
+<li data-type="button" data-key="embed"><a class="grouped-right" data-l10n-id="pad.toolbar.embed.title" title="Partager et intégrer ce bloc-notes" aria-label="Partager et intégrer ce bloc-notes"><button class=" buttonicon buttonicon-embed" data-l10n-id="pad.toolbar.embed.title" title="Partager et intégrer ce bloc-notes" aria-label="Partager et intégrer ce bloc-notes"></button></a></li><li class="separator"></li><li data-type="button" data-key="showusers"><a class="" data-l10n-id="pad.toolbar.showusers.title" title="Afficher les utilisateurs du bloc-notes" aria-label="Afficher les utilisateurs du bloc-notes" style="box-shadow: rgb(255, 199, 199) 0px 0px 30px inset;"><button class=" buttonicon buttonicon-showusers" data-l10n-id="pad.toolbar.showusers.title" title="Afficher les utilisateurs du bloc-notes" aria-label="Afficher les utilisateurs du bloc-notes"></button><span id="online_count">4</span></a></li>
+          
+      </ul>
+      <span class="show-more-icon-btn"></span> <!-- use on small screen to display hidden toolbar buttons -->
+  </div>
+
+  
+
+  <div id="editorcontainerbox" class="flex-layout">
+
+      
+
+      <!----------------------------->
+      <!--- PAD EDITOR (in iframe) -->
+      <!----------------------------->
+
+      <div id="editorcontainer" class="editorcontainer initialized"><iframe name="ace_outer" frameborder="0" title="Ether" src="./DOCKER _ Etherpad_files/empty.html"></iframe></div>
+
+      <div id="editorloadingbox" style="display: none;">
+        
+        <div id="permissionDenied">
+          <p data-l10n-id="pad.permissionDenied" class="editorloadingbox-message" aria-label="Vous n’êtes pas autorisé à accéder à ce bloc-notes">Vous n’êtes pas autorisé à accéder à ce bloc-notes</p>
+        </div>
+        
+        
+        <p data-l10n-id="pad.loading" id="loading" class="editorloadingbox-message">
+          <img src="./DOCKER _ Etherpad_files/brand.svg" class="etherpadBrand"><br>Chargement...</p>
+        
+        <noscript>
+          <p class="editorloadingbox-message">
+            <strong>
+              Sorry, you have to enable Javascript in order to use this.
+            </strong>
+          </p>
+        </noscript>
+      </div>
+
+
+      <!------------------------------------------------------------->
+      <!-- SETTINGS POPUP (change font, language, chat parameters) -->
+      <!------------------------------------------------------------->
+
+      <div id="settings" class="popup"><div class="popup-content">
+          <h1 data-l10n-id="pad.settings.padSettings" aria-label="Paramètres du bloc-notes">Paramètres du bloc-notes</h1>
+          
+          <h2 data-l10n-id="pad.settings.myView" aria-label="Ma vue">Ma vue</h2>
+          <p class="hide-for-mobile">
+              <input type="checkbox" id="options-stickychat" onclick="chat.stickToScreen();">
+              <label for="options-stickychat" data-l10n-id="pad.settings.stickychat" aria-label="Toujours afficher le clavardage">Toujours afficher le clavardage</label>
+          </p>
+          <p class="hide-for-mobile">
+              <input type="checkbox" id="options-chatandusers" onclick="chat.chatAndUsers();">
+              <label for="options-chatandusers" data-l10n-id="pad.settings.chatandusers" aria-label="Afficher le clavardage et les utilisateurs">Afficher le clavardage et les utilisateurs</label>
+          </p>
+          <p>
+              <input type="checkbox" id="options-colorscheck" checked="checked">
+              <label for="options-colorscheck" data-l10n-id="pad.settings.colorcheck" aria-label="Surlignage par auteur">Surlignage par auteur</label>
+          </p>
+          <p>
+              <input type="checkbox" id="options-linenoscheck" checked="checked">
+              <label for="options-linenoscheck" data-l10n-id="pad.settings.linenocheck" aria-label="Numéros de lignes">Numéros de lignes</label>
+          </p>
+          <p>
+              <input type="checkbox" id="options-rtlcheck">
+              <label for="options-rtlcheck" data-l10n-id="pad.settings.rtlcheck" aria-label="Le contenu doit-il être lu de droite à gauche ?">Le contenu doit-il être lu de droite à gauche ?</label>
+          </p>
+          
+
+          <div class="dropdowns-container">
+            
+            <p class="dropdown-line">
+              <label for="viewfontmenu" data-l10n-id="pad.settings.fontType" aria-label="Type de police :">Type de police :</label>
+              <select id="viewfontmenu" style="display: none;">
+                <option value="" data-l10n-id="pad.settings.fontType.normal" aria-label="Normal">Normal</option>
+                Quicksand,Roboto,Alegreya,PlayfairDisplay,Montserrat,OpenDyslexic,RobotoMono
+                
+                  <option value="Quicksand">Quicksand</option>
+                
+                  <option value="Roboto">Roboto</option>
+                
+                  <option value="Alegreya">Alegreya</option>
+                
+                  <option value="PlayfairDisplay">PlayfairDisplay</option>
+                
+                  <option value="Montserrat">Montserrat</option>
+                
+                  <option value="OpenDyslexic">OpenDyslexic</option>
+                
+                  <option value="RobotoMono">RobotoMono</option>
+                
+              </select><div class="nice-select" tabindex="0"><span class="current">Normal</span><ul class="list thin-scrollbar"><li data-value="" class="option selected">Normal</li><li data-value="Quicksand" class="option">Quicksand</li><li data-value="Roboto" class="option">Roboto</li><li data-value="Alegreya" class="option">Alegreya</li><li data-value="PlayfairDisplay" class="option">PlayfairDisplay</li><li data-value="Montserrat" class="option">Montserrat</li><li data-value="OpenDyslexic" class="option">OpenDyslexic</li><li data-value="RobotoMono" class="option">RobotoMono</li></ul></div>
+            </p>
+
+            <p class="dropdown-line">
+              <label for="languagemenu" data-l10n-id="pad.settings.language" aria-label="Langue :">Langue :</label>
+              <select id="languagemenu" style="display: none;">
+                  
+                  <option value="af">Afrikaans</option>
+                  
+                  <option value="ar">العربية</option>
+                  
+                  <option value="ast">asturianu</option>
+                  
+                  <option value="az">azərbaycanca</option>
+                  
+                  <option value="azb">تورکجه</option>
+                  
+                  <option value="bcc">بلوچی مکرانی</option>
+                  
+                  <option value="be-tarask">беларуская (тарашкевіца)‎</option>
+                  
+                  <option value="bg">български</option>
+                  
+                  <option value="bn">বাংলা</option>
+                  
+                  <option value="br">brezhoneg</option>
+                  
+                  <option value="bs">bosanski</option>
+                  
+                  <option value="ca">català</option>
+                  
+                  <option value="cs">česky</option>
+                  
+                  <option value="da">dansk</option>
+                  
+                  <option value="de">Deutsch</option>
+                  
+                  <option value="diq">Zazaki</option>
+                  
+                  <option value="dsb">dolnoserbski</option>
+                  
+                  <option value="el">Ελληνικά</option>
+                  
+                  <option value="en-gb">British English</option>
+                  
+                  <option value="en">English</option>
+                  
+                  <option value="eo">Esperanto</option>
+                  
+                  <option value="es">español</option>
+                  
+                  <option value="et">eesti</option>
+                  
+                  <option value="eu">euskara</option>
+                  
+                  <option value="fa">فارسی</option>
+                  
+                  <option value="fi">suomi</option>
+                  
+                  <option value="fo">føroyskt</option>
+                  
+                  <option value="fr">français</option>
+                  
+                  <option value="fy">Frysk</option>
+                  
+                  <option value="gl">galego</option>
+                  
+                  <option value="gu">ગુજરાતી</option>
+                  
+                  <option value="he">עברית</option>
+                  
+                  <option value="hi">हिन्दी</option>
+                  
+                  <option value="hr">hrvatski</option>
+                  
+                  <option value="hsb">hornjoserbsce</option>
+                  
+                  <option value="hu">magyar</option>
+                  
+                  <option value="hy">Հայերեն</option>
+                  
+                  <option value="ia">interlingua</option>
+                  
+                  <option value="id">Bahasa Indonesia</option>
+                  
+                  <option value="is">íslenska</option>
+                  
+                  <option value="it">italiano</option>
+                  
+                  <option value="ja">日本語</option>
+                  
+                  <option value="kab">Taqbaylit</option>
+                  
+                  <option value="km">ភាសាខ្មែរ</option>
+                  
+                  <option value="ko">한국어</option>
+                  
+                  <option value="krc">къарачай-малкъар</option>
+                  
+                  <option value="ksh">Ripoarisch</option>
+                  
+                  <option value="ku-latn">Kurdî (latînî)‎</option>
+                  
+                  <option value="lb">Lëtzebuergesch</option>
+                  
+                  <option value="lt">lietuvių</option>
+                  
+                  <option value="lv">latviešu</option>
+                  
+                  <option value="map-bms">Basa Banyumasan</option>
+                  
+                  <option value="mg">Malagasy</option>
+                  
+                  <option value="mk">македонски</option>
+                  
+                  <option value="ml">മലയാളം</option>
+                  
+                  <option value="mn">монгол</option>
+                  
+                  <option value="mnw">ဘာသာ မန်</option>
+                  
+                  <option value="mr">मराठी</option>
+                  
+                  <option value="ms">Bahasa Melayu</option>
+                  
+                  <option value="my">မြန်မာဘာသာ</option>
+                  
+                  <option value="nah">Nāhuatl</option>
+                  
+                  <option value="nap">Nnapulitano</option>
+                  
+                  <option value="nb">norsk (bokmål)‎</option>
+                  
+                  <option value="nds">Plattdüütsch</option>
+                  
+                  <option value="ne">नेपाली</option>
+                  
+                  <option value="nl">Nederlands</option>
+                  
+                  <option value="nn">norsk (nynorsk)‎</option>
+                  
+                  <option value="oc">occitan</option>
+                  
+                  <option value="os">Ирон</option>
+                  
+                  <option value="pa">ਪੰਜਾਬੀ</option>
+                  
+                  <option value="pl">polski</option>
+                  
+                  <option value="pms">Piemontèis</option>
+                  
+                  <option value="ps">پښتو</option>
+                  
+                  <option value="pt-br">português do Brasil</option>
+                  
+                  <option value="pt">português</option>
+                  
+                  <option value="qqq">Message documentation</option>
+                  
+                  <option value="ro">română</option>
+                  
+                  <option value="ru">русский</option>
+                  
+                  <option value="sco">Scots</option>
+                  
+                  <option value="sd">سنڌي</option>
+                  
+                  <option value="sh">srpskohrvatski / српскохрватски</option>
+                  
+                  <option value="shn">လိၵ်ႈတႆး</option>
+                  
+                  <option value="sk">slovenčina</option>
+                  
+                  <option value="sl">slovenščina</option>
+                  
+                  <option value="sq">shqip</option>
+                  
+                  <option value="sr-ec">српски (ћирилица)‎</option>
+                  
+                  <option value="sr-el">srpski (latinica)‎</option>
+                  
+                  <option value="sv">svenska</option>
+                  
+                  <option value="sw">Kiswahili</option>
+                  
+                  <option value="ta">தமிழ்</option>
+                  
+                  <option value="tcy">ತುಳು</option>
+                  
+                  <option value="te">తెలుగు</option>
+                  
+                  <option value="th">ไทย</option>
+                  
+                  <option value="tr">Türkçe</option>
+                  
+                  <option value="uk">українська</option>
+                  
+                  <option value="vec">vèneto</option>
+                  
+                  <option value="vi">Tiếng Việt</option>
+                  
+                  <option value="zh-hans">中文（简体）‎</option>
+                  
+                  <option value="zh-hant">中文（繁體）‎</option>
+                  
+              </select><div class="nice-select" tabindex="0"><span class="current">français</span><ul class="list thin-scrollbar"><li data-value="af" class="option">Afrikaans</li><li data-value="ar" class="option">العربية</li><li data-value="ast" class="option">asturianu</li><li data-value="az" class="option">azərbaycanca</li><li data-value="azb" class="option">تورکجه</li><li data-value="bcc" class="option">بلوچی مکرانی</li><li data-value="be-tarask" class="option">беларуская (тарашкевіца)‎</li><li data-value="bg" class="option">български</li><li data-value="bn" class="option">বাংলা</li><li data-value="br" class="option">brezhoneg</li><li data-value="bs" class="option">bosanski</li><li data-value="ca" class="option">català</li><li data-value="cs" class="option">česky</li><li data-value="da" class="option">dansk</li><li data-value="de" class="option">Deutsch</li><li data-value="diq" class="option">Zazaki</li><li data-value="dsb" class="option">dolnoserbski</li><li data-value="el" class="option">Ελληνικά</li><li data-value="en-gb" class="option">British English</li><li data-value="en" class="option">English</li><li data-value="eo" class="option">Esperanto</li><li data-value="es" class="option">español</li><li data-value="et" class="option">eesti</li><li data-value="eu" class="option">euskara</li><li data-value="fa" class="option">فارسی</li><li data-value="fi" class="option">suomi</li><li data-value="fo" class="option">føroyskt</li><li data-value="fr" class="option selected">français</li><li data-value="fy" class="option">Frysk</li><li data-value="gl" class="option">galego</li><li data-value="gu" class="option">ગુજરાતી</li><li data-value="he" class="option">עברית</li><li data-value="hi" class="option">हिन्दी</li><li data-value="hr" class="option">hrvatski</li><li data-value="hsb" class="option">hornjoserbsce</li><li data-value="hu" class="option">magyar</li><li data-value="hy" class="option">Հայերեն</li><li data-value="ia" class="option">interlingua</li><li data-value="id" class="option">Bahasa Indonesia</li><li data-value="is" class="option">íslenska</li><li data-value="it" class="option">italiano</li><li data-value="ja" class="option">日本語</li><li data-value="kab" class="option">Taqbaylit</li><li data-value="km" class="option">ភាសាខ្មែរ</li><li data-value="ko" class="option">한국어</li><li data-value="krc" class="option">къарачай-малкъар</li><li data-value="ksh" class="option">Ripoarisch</li><li data-value="ku-latn" class="option">Kurdî (latînî)‎</li><li data-value="lb" class="option">Lëtzebuergesch</li><li data-value="lt" class="option">lietuvių</li><li data-value="lv" class="option">latviešu</li><li data-value="map-bms" class="option">Basa Banyumasan</li><li data-value="mg" class="option">Malagasy</li><li data-value="mk" class="option">македонски</li><li data-value="ml" class="option">മലയാളം</li><li data-value="mn" class="option">монгол</li><li data-value="mnw" class="option">ဘာသာ မန်</li><li data-value="mr" class="option">मराठी</li><li data-value="ms" class="option">Bahasa Melayu</li><li data-value="my" class="option">မြန်မာဘာသာ</li><li data-value="nah" class="option">Nāhuatl</li><li data-value="nap" class="option">Nnapulitano</li><li data-value="nb" class="option">norsk (bokmål)‎</li><li data-value="nds" class="option">Plattdüütsch</li><li data-value="ne" class="option">नेपाली</li><li data-value="nl" class="option">Nederlands</li><li data-value="nn" class="option">norsk (nynorsk)‎</li><li data-value="oc" class="option">occitan</li><li data-value="os" class="option">Ирон</li><li data-value="pa" class="option">ਪੰਜਾਬੀ</li><li data-value="pl" class="option">polski</li><li data-value="pms" class="option">Piemontèis</li><li data-value="ps" class="option">پښتو</li><li data-value="pt-br" class="option">português do Brasil</li><li data-value="pt" class="option">português</li><li data-value="qqq" class="option">Message documentation</li><li data-value="ro" class="option">română</li><li data-value="ru" class="option">русский</li><li data-value="sco" class="option">Scots</li><li data-value="sd" class="option">سنڌي</li><li data-value="sh" class="option">srpskohrvatski / српскохрватски</li><li data-value="shn" class="option">လိၵ်ႈတႆး</li><li data-value="sk" class="option">slovenčina</li><li data-value="sl" class="option">slovenščina</li><li data-value="sq" class="option">shqip</li><li data-value="sr-ec" class="option">српски (ћирилица)‎</li><li data-value="sr-el" class="option">srpski (latinica)‎</li><li data-value="sv" class="option">svenska</li><li data-value="sw" class="option">Kiswahili</li><li data-value="ta" class="option">தமிழ்</li><li data-value="tcy" class="option">ತುಳು</li><li data-value="te" class="option">తెలుగు</li><li data-value="th" class="option">ไทย</li><li data-value="tr" class="option">Türkçe</li><li data-value="uk" class="option">українська</li><li data-value="vec" class="option">vèneto</li><li data-value="vi" class="option">Tiếng Việt</li><li data-value="zh-hans" class="option">中文（简体）‎</li><li data-value="zh-hant" class="option">中文（繁體）‎</li></ul></div>
+            </p>
+            
+          </div>
+
+          <h2 data-l10n-id="pad.settings.about" aria-label="À propos">À propos</h2>
+          <span data-l10n-id="pad.settings.poweredBy" aria-label="Propulsé par">Propulsé par</span>
+          <a href="https://etherpad.org/">Etherpad</a>
+          
+      </div></div>
+
+
+      <!------------------------->
+      <!-- IMPORT EXPORT POPUP -->
+      <!------------------------->
+
+      <div id="import_export" class="popup"><div class="popup-content">
+          <h1 data-l10n-id="pad.importExport.import_export" aria-label="Importer/Exporter">Importer/Exporter</h1>
+          <div class="acl-write">
+              
+              <h2 data-l10n-id="pad.importExport.import" aria-label="Charger un texte ou un document">Charger un texte ou un document</h2>
+              <div class="importmessage" id="importmessageabiword" data-l10n-id="pad.importExport.abiword.innerHTML" aria-label="Vous ne pouvez importer que des formats texte brut ou HTML. Pour des fonctionnalités d’importation plus évoluées, veuillez &lt;a href=&quot;https://github.com/ether/etherpad-lite/wiki/How-to-enable-importing-and-exporting-different-file-formats-with-AbiWord&quot;&gt;installer AbiWord ou LibreOffice&lt;/a&gt;." style="display: block;">Vous ne pouvez importer que des formats texte brut ou HTML. Pour des fonctionnalités d’importation plus évoluées, veuillez <a href="https://github.com/ether/etherpad-lite/wiki/How-to-enable-importing-and-exporting-different-file-formats-with-AbiWord">installer AbiWord ou LibreOffice</a>.</div><br>
+              <form id="importform" method="post" action="https://etherpad.wikimedia.org/p/DOCKER" target="importiframe" enctype="multipart/form-data">
+                  <div class="importformdiv" id="importformfilediv">
+                      <input type="file" name="file" size="10" id="importfileinput">
+                      <div class="importmessage" id="importmessagefail"></div>
+                  </div>
+                  <div id="import" style="opacity: 0.5;"><iframe name="importiframe" class="importframe" style="display: none;" src="./DOCKER _ Etherpad_files/saved_resource.html"></iframe></div>
+                  <div class="importmessage" id="importmessagesuccess" data-l10n-id="pad.importExport.importSuccessful" aria-label="Réussi !">Réussi !</div>
+                  <div class="importformdiv" id="importformsubmitdiv">
+                      <span class="nowrap">
+                          <input type="submit" class="btn btn-primary" name="submit" value="Importer maintenant" disabled="disabled" id="importsubmitinput">
+                          <div alt="" id="importstatusball" class="loadingAnimation" align="top"></div>
+                      </span>
+                  </div>
+              </form>
+              
+          </div>
+          <div id="exportColumn">
+              <h2 data-l10n-id="pad.importExport.export" aria-label="Exporter le bloc-notes actuel en :">Exporter le bloc-notes actuel en :</h2>
+              
+              <a id="exportetherpada" target="_blank" class="exportlink" href="https://etherpad.wikimedia.org/p/DOCKER/export/etherpad">
+                <span class="exporttype buttonicon buttonicon-file-powerpoint" id="exportetherpad" data-l10n-id="pad.importExport.exportetherpad" aria-label="Etherpad">Etherpad</span>
+              </a>
+              <a id="exporthtmla" target="_blank" class="exportlink" href="https://etherpad.wikimedia.org/p/DOCKER/export/html">
+                <span class="exporttype buttonicon buttonicon-file-code" id="exporthtml" data-l10n-id="pad.importExport.exporthtml" aria-label="HTML">HTML</span>
+              </a>
+              <a id="exportplaina" target="_blank" class="exportlink" href="https://etherpad.wikimedia.org/p/DOCKER/export/txt">
+                <span class="exporttype buttonicon buttonicon-file" id="exportplain" data-l10n-id="pad.importExport.exportplain" aria-label="Texte brut">Texte brut</span>
+              </a>
+              
+              
+              
+              
+          </div>
+      </div></div>
+
+
+      <!---------------------------------------------------->
+      <!-- CONNECTIVITY POPUP (when you get disconnected) -->
+      <!---------------------------------------------------->
+
+      <div id="connectivity" class="popup popup-show"><div class="popup-content">
+          
+          <div class="connected">
+            <h2 data-l10n-id="pad.modals.connected" aria-label="Connecté.">Connecté.</h2>
+          </div>
+          <div class="reconnecting">
+            <h1 data-l10n-id="pad.modals.reconnecting" aria-label="Reconnexion à votre bloc-notes en cours...">Reconnexion à votre bloc-notes en cours...</h1>
+            <i class="buttonicon buttonicon-spin5 icon-spin">
+              <img src="./DOCKER _ Etherpad_files/brand.svg" class="etherpadBrand"><br>
+            </i>
+          </div>
+          <div class="userdup">
+            <h1 data-l10n-id="pad.modals.userdup" aria-label="Ouvert dans une autre fenêtre">Ouvert dans une autre fenêtre</h1>
+            <h2 data-l10n-id="pad.modals.userdup.explanation" aria-label="Ce bloc-notes semble être ouvert dans plusieurs fenêtres sur cet ordinateur.">Ce bloc-notes semble être ouvert dans plusieurs fenêtres sur cet ordinateur.</h2>
+            <p id="defaulttext" data-l10n-id="pad.modals.userdup.advice" aria-label="Se reconnecter en utilisant plutôt cette fenêtre.">Se reconnecter en utilisant plutôt cette fenêtre.</p>
+            <button id="forcereconnect" class="btn btn-primary" data-l10n-id="pad.modals.forcereconnect" aria-label="Forcer la reconnexion">Forcer la reconnexion</button>
+          </div>
+          <div class="unauth">
+            <h1 data-l10n-id="pad.modals.unauth" aria-label="Non autorisé">Non autorisé</h1>
+            <p id="defaulttext" data-l10n-id="pad.modals.unauth.explanation" aria-label="Vos autorisations ont été changées lors de l’affichage de cette page. Essayez de vous reconnecter.">Vos autorisations ont été changées lors de l’affichage de cette page. Essayez de vous reconnecter.</p>
+            <button id="forcereconnect" class="btn btn-primary" data-l10n-id="pad.modals.forcereconnect" aria-label="Forcer la reconnexion">Forcer la reconnexion</button>
+          </div>
+          <div class="looping">
+            <h1 data-l10n-id="pad.modals.disconnected" aria-label="Vous avez été déconnecté.">Vous avez été déconnecté.</h1>
+            <h2 data-l10n-id="pad.modals.looping.explanation" aria-label="Nous éprouvons des problèmes de communication au serveur de synchronisation.">Nous éprouvons des problèmes de communication au serveur de synchronisation.</h2>
+            <p data-l10n-id="pad.modals.looping.cause" aria-label="Il est possible que vous soyez connecté avec un pare-feu ou un mandataire incompatible.">Il est possible que vous soyez connecté avec un pare-feu ou un mandataire incompatible.</p>
+          </div>
+          <div class="initsocketfail">
+            <h1 data-l10n-id="pad.modals.initsocketfail" aria-label="Le serveur est introuvable.">Le serveur est introuvable.</h1>
+            <h2 data-l10n-id="pad.modals.initsocketfail.explanation" aria-label="Impossible de se connecter au serveur de synchronisation.">Impossible de se connecter au serveur de synchronisation.</h2>
+            <p data-l10n-id="pad.modals.initsocketfail.cause" aria-label="Ceci est probablement dû à un problème avec votre navigateur ou votre connexion internet.">Ceci est probablement dû à un problème avec votre navigateur ou votre connexion internet.</p>
+          </div>
+          <div class="slowcommit with_reconnect_timer">
+            <h1 data-l10n-id="pad.modals.disconnected" aria-label="Vous avez été déconnecté.">Vous avez été déconnecté.</h1>
+            <h2 data-l10n-id="pad.modals.slowcommit.explanation" aria-label="Le serveur ne répond pas.">Le serveur ne répond pas.</h2>
+            <p id="defaulttext" data-l10n-id="pad.modals.slowcommit.cause" aria-label="Ce problème peut venir d’une mauvaise connectivité au réseau.">Ce problème peut venir d’une mauvaise connectivité au réseau.</p>
+            <button id="forcereconnect" class="btn btn-primary" data-l10n-id="pad.modals.forcereconnect" aria-label="Forcer la reconnexion">Forcer la reconnexion</button>
+          </div>
+          <div class="badChangeset with_reconnect_timer">
+            <h1 data-l10n-id="pad.modals.disconnected" aria-label="Vous avez été déconnecté.">Vous avez été déconnecté.</h1>
+            <h2 data-l10n-id="pad.modals.badChangeset.explanation" aria-label="Une modification que vous avez effectuée a été classée comme interdite par le serveur de synchronisation.">Une modification que vous avez effectuée a été classée comme interdite par le serveur de synchronisation.</h2>
+            <p id="defaulttext" data-l10n-id="pad.modals.badChangeset.cause" aria-label="Cela peut être dû à une mauvaise configuration du serveur ou à un autre comportement inattendu. Veuillez contacter l’administrateur du service si vous pensez que c’est une erreur. Essayez de vous reconnecter pour continuer à modifier.">Cela peut être dû à une mauvaise configuration du serveur ou à un autre comportement inattendu. Veuillez contacter l’administrateur du service si vous pensez que c’est une erreur. Essayez de vous reconnecter pour continuer à modifier.</p>
+            <button id="forcereconnect" class="btn btn-primary" data-l10n-id="pad.modals.forcereconnect" aria-label="Forcer la reconnexion">Forcer la reconnexion</button>
+          </div>
+          <div class="corruptPad">
+            <h1 data-l10n-id="pad.modals.disconnected" aria-label="Vous avez été déconnecté.">Vous avez été déconnecté.</h1>
+            <h2 data-l10n-id="pad.modals.corruptPad.explanation" aria-label="Le bloc-notes auquel vous essayez d’accéder est corrompu.">Le bloc-notes auquel vous essayez d’accéder est corrompu.</h2>
+            <p data-l10n-id="pad.modals.corruptPad.cause" aria-label="Cela peut être dû à une mauvaise configuration du serveur ou à un autre comportement inattendu. Veuillez contacter l’administrateur du service.">Cela peut être dû à une mauvaise configuration du serveur ou à un autre comportement inattendu. Veuillez contacter l’administrateur du service.</p>
+          </div>
+          <div class="deleted">
+            <h1 data-l10n-id="pad.modals.deleted" aria-label="Supprimé.">Supprimé.</h1>
+            <p data-l10n-id="pad.modals.deleted.explanation" aria-label="Ce bloc-notes a été supprimé.">Ce bloc-notes a été supprimé.</p>
+          </div>
+          <div class="rateLimited">
+            <h1 data-l10n-id="pad.modals.rateLimited" aria-label="Flot limité.">Flot limité.</h1>
+            <p data-l10n-id="pad.modals.rateLimited.explanation" aria-label="Vous avez envoyé trop de messages à ce bloc-notes, il vous a donc déconnecté.">Vous avez envoyé trop de messages à ce bloc-notes, il vous a donc déconnecté.</p>
+          </div>
+          <div class="rejected">
+            <h1 data-l10n-id="pad.modals.disconnected" aria-label="Vous avez été déconnecté.">Vous avez été déconnecté.</h1>
+            <h2 data-l10n-id="pad.modals.rejected.explanation" aria-label="Le serveur a rejeté un message qui a été envoyé par votre navigateur.">Le serveur a rejeté un message qui a été envoyé par votre navigateur.</h2>
+            <p data-l10n-id="pad.modals.rejected.cause" aria-label="Le serveur peut avoir été mis à jour pendant que vous regardiez le bloc-notes, ou il y a peut-être une anomalie dans Etherpad. Essayez de recharger la page.">Le serveur peut avoir été mis à jour pendant que vous regardiez le bloc-notes, ou il y a peut-être une anomalie dans Etherpad. Essayez de recharger la page.</p>
+          </div>
+          <div class="disconnected with_reconnect_timer visible">
+            
+            <h1 data-l10n-id="pad.modals.disconnected" aria-label="Vous avez été déconnecté.">Vous avez été déconnecté.</h1>
+            <h2 data-l10n-id="pad.modals.disconnected.explanation" aria-label="La connexion au serveur a échoué.">La connexion au serveur a échoué.</h2>
+            <p id="defaulttext" data-l10n-id="pad.modals.disconnected.cause" aria-label="Il se peut que le serveur soit indisponible. Si le problème persiste, veuillez en informer l’administrateur du service.">Il se peut que le serveur soit indisponible. Si le problème persiste, veuillez en informer l’administrateur du service.</p>
+            <button id="forcereconnect" class="btn btn-primary" data-l10n-id="pad.modals.forcereconnect" aria-label="Forcer la reconnexion">Forcer la reconnexion</button>
+            
+          </div>
+          <form id="reconnectform" method="post" action="https://etherpad.wikimedia.org/ep/pad/reconnect" accept-charset="UTF-8" style="display: none;">
+              <input type="hidden" class="padId" name="padId">
+              <input type="hidden" class="diagnosticInfo" name="diagnosticInfo">
+              <input type="hidden" class="missedChanges" name="missedChanges">
+          </form>
+          
+      </div></div>
+
+
+      <!-------------------------------->
+      <!-- EMBED POPUP (Share, embed) -->
+      <!-------------------------------->
+
+      <div id="embed" class="popup"><div class="popup-content">
+          
+          <h1 data-l10n-id="pad.share" aria-label="Partager ce bloc-notes">Partager ce bloc-notes</h1>
+          <div id="embedreadonly" class="acl-write">
+              <input type="checkbox" id="readonlyinput">
+              <label for="readonlyinput" data-l10n-id="pad.share.readonly" aria-label="Lecture seule">Lecture seule</label>
+          </div>
+          <div id="linkcode">
+              <h2 data-l10n-id="pad.share.link" aria-label="Lien">Lien</h2>
+              <input id="linkinput" type="text" value="" onclick="this.select()">
+          </div>
+          <div id="embedcode">
+              <h2 data-l10n-id="pad.share.emebdcode" aria-label="Incorporer un lien">Incorporer un lien</h2>
+              <input id="embedinput" type="text" value="" onclick="this.select()">
+          </div>
+          
+      </div></div>
+
+      <div class="sticky-container">
+
+        <!---------------------------------------------------------------------->
+        <!-- USERS POPUP (set username, color, see other users names & color) -->
+        <!---------------------------------------------------------------------->
+
+        <div id="users" class="popup"><div class="popup-content">
+            
+            <div id="connectionstatus"></div>
+            <div id="myuser">
+                <div id="mycolorpicker" class="popup"><div class="popup-content">
+                    <div id="colorpicker"><div class="farbtastic" style="position: relative; width: 220px; height: 220px;" width="220" height="220"><div class="farbtastic-solid" width="220" height="220" style="width: 117px; height: 117px; position: absolute; left: 51px; top: 51px; background-color: rgb(255, 0, 0);"></div><canvas class="farbtastic-mask" width="220" height="220" style="width: 220px; height: 220px; position: absolute;"></canvas><canvas class="farbtastic-overlay" width="220" height="220" style="width: 220px; height: 220px; position: absolute;"></canvas></div></div>
+                    <div class="btn-container">
+                      <button id="mycolorpickersave" data-l10n-id="pad.colorpicker.save" class="btn btn-primary" aria-label="Enregistrer">Enregistrer</button>
+                      <button id="mycolorpickercancel" data-l10n-id="pad.colorpicker.cancel" class="btn btn-default" aria-label="Annuler">Annuler</button>
+                      <span id="mycolorpickerpreview" class="myswatchboxhoverable" style="background-color: rgb(128, 128, 128); color: rgb(255, 255, 255);"></span>
+                    </div>
+                </div></div>
+                <div id="myswatchbox" class="myswatchboxhoverable"><div id="myswatch" style="background-color: rgb(255, 199, 199);"></div></div>
+                <div id="myusernameform">
+                  <input type="text" id="myusernameedit" data-l10n-id="pad.userlist.entername" aria-label="Entrez votre nom" placeholder="Entrez votre nom" class="myusernameedithoverable editable">Entrez votre nom</input>
+                </div>
+            </div>
+            <div id="otherusers" aria-role="document">
+                <table id="otheruserstable" cellspacing="0" cellpadding="0" border="0" style="display: table;">
+                    <tbody><tr data-authorid="a.7Oj7nGkB1f1dvanr" id="usertr3"><td class="usertdswatch" style="height: 26px; opacity: 0.416667;"><div class="swatch" style="background: rgb(231, 177, 177);">&nbsp;</div></td><td class="usertdname" style="height: 26px; opacity: 0.416667;"><input data-l10n-id="pad.userlist.unnamed" type="text" class="editempty editable" value="anonyme"></td><td class="activity" style="height: 26px; opacity: 0.416667;"></td></tr><tr data-authorid="a.XzZzNBlBXO9n3QDi" id="usertr6"><td colspan="4" style="border: 0px; height: 18px;"></td></tr><tr data-authorid="a.kC1zsiiLkubDAh7U" id="usertr5"><td class="usertdswatch" style="height: 26px; opacity: 1;"><div class="swatch" style="background: rgb(227, 255, 199);">&nbsp;</div></td><td class="usertdname" style="height: 26px; opacity: 1;"><input data-l10n-id="pad.userlist.unnamed" type="text" class="editempty editable" value="anonyme"></td><td class="activity" style="height: 26px; opacity: 1;"></td></tr><tr data-authorid="a.qqPFDtjylR2oU0C7" id="usertr9"><td class="usertdswatch" style="height: 26px; opacity: 1;"><div class="swatch" style="background: rgb(199, 213, 255);">&nbsp;</div></td><td class="usertdname" style="height: 26px; opacity: 1;"><input data-l10n-id="pad.userlist.unnamed" type="text" class="editempty newinput" value="anonyme"></td><td class="activity" style="height: 26px; opacity: 1;"></td></tr><tr data-authorid="a.ztoe3AV3HtOD0OZi" id="usertr4"><td class="usertdswatch" style="height: 26px; opacity: 0.5;"><div class="swatch" style="background: rgb(177, 213, 231);">&nbsp;</div></td><td class="usertdname" style="height: 26px; opacity: 0.5;"><input data-l10n-id="pad.userlist.unnamed" type="text" class="editempty newinput" value="anonyme"></td><td class="activity" style="height: 26px; opacity: 0.5;"></td></tr>
+                </tbody></table>
+            </div>
+            <div id="userlistbuttonarea"></div>
+            
+        </div></div>
+
+
+        <!----------------------------->
+        <!----------- CHAT ------------>
+        <!----------------------------->
+
+        <div id="chaticon" class="visible" onclick="chat.show();return false;" title="Chat (Alt C)" style="display: block;">
+            <span id="chatlabel" data-l10n-id="pad.chat" aria-label="Clavardage">Clavardage</span>
+            <span class="buttonicon buttonicon-chat"></span>
+            <span id="chatcounter">0</span>
+        </div>
+
+        <div id="chatbox">
+          <div class="chat-content">
+            <div id="titlebar">
+              <h1 id="titlelabel" data-l10n-id="pad.chat" aria-label="Clavardage">Clavardage</h1>
+              <a id="titlecross" class="hide-reduce-btn" onclick="chat.hide();return false;">-&nbsp;</a>
+              <a id="titlesticky" class="stick-to-screen-btn" onclick="chat.stickToScreen(true);return false;" data-l10n-id="pad.chat.stick.title" title="Ancrer la discussion sur l’écran" aria-label="Ancrer la discussion sur l’écran">█&nbsp;&nbsp;</a>
+            </div>
+            <div id="chattext" class="thin-scrollbar authorColors" aria-live="polite" aria-relevant="additions removals text" role="log" aria-atomic="false">
+                <div alt="loading.." id="chatloadmessagesball" class="chatloadmessages loadingAnimation" align="top" style="display: none;"></div>
+                <button id="chatloadmessagesbutton" class="chatloadmessages" data-l10n-id="pad.chat.loadmessages" aria-label="Charger davantage de messages" style="display: none;">Charger davantage de messages</button><p data-authorid="a.hFUGqWm1XBWWTLSm" class="author-a-hz70zz85zz71zqz87zm1z88zz66zz87zz87zz84zz76zz83zm"><b>anonyme:</b><span class="time author-a-hz70zz85zz71zqz87zm1z88zz66zz87zz87zz84zz76zz83zm">11:35</span> <a target="_blank" href="https://stackoverflow.com/questions/72410663/error-starting-mariadb-on-docker-compose-build" rel="noreferrer noopener">https://stackoverflow.com/questions/72410663/error-starting-mariadb-on-docker-compose-build</a></p><p data-authorid="a.hFUGqWm1XBWWTLSm" class="author-a-hz70zz85zz71zqz87zm1z88zz66zz87zz87zz84zz76zz83zm"><b>anonyme:</b><span class="time author-a-hz70zz85zz71zqz87zm1z88zz66zz87zz87zz84zz76zz83zm">11:36</span> <a target="_blank" href="https://hub.docker.com/_/mariadb" rel="noreferrer noopener">https://hub.docker.com/_/mariadb</a></p><p data-authorid="a.hFUGqWm1XBWWTLSm" class="author-a-hz70zz85zz71zqz87zm1z88zz66zz87zz87zz84zz76zz83zm"><b>anonyme:</b><span class="time author-a-hz70zz85zz71zqz87zm1z88zz66zz87zz87zz84zz76zz83zm">15:26</span> <a target="_blank" href="https://www.numerama.com/tech/636477-linux-approuve-le-bannissement-des-termes-maitre-esclave-et-liste-noire.html" rel="noreferrer noopener">https://www.numerama.com/tech/636477-linux-approuve-le-bannissement-des-termes-maitre-esclave-et-liste-noire.html</a></p><p data-authorid="a.hFUGqWm1XBWWTLSm" class="author-a-hz70zz85zz71zqz87zm1z88zz66zz87zz87zz84zz76zz83zm"><b>anonyme:</b><span class="time author-a-hz70zz85zz71zqz87zm1z88zz66zz87zz87zz84zz76zz83zm">15:29</span> Jeff : 
+    docker swarm join --token SWMTKN-1-39tbmhakucf9kjzvpw6q042dlvvenq7gy64uemvbgrk17egedc-d49vgvfc6mr7lispw6rnmoh8x 10.201.3.24:2377
+</p><p data-authorid="a.hFUGqWm1XBWWTLSm" class="author-a-hz70zz85zz71zqz87zm1z88zz66zz87zz87zz84zz76zz83zm"><b>anonyme:</b><span class="time author-a-hz70zz85zz71zqz87zm1z88zz66zz87zz87zz84zz76zz83zm">15:36</span> Jeff : 
+root@formation:~# docker node ls
+ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS      ENGINE VERSION
+lvtv9xyz8hxz1zub621s4d0km     formation           Ready               Active                                  19.03.15
+r97e6acvv6bqfdfasoeyjh6js     formation           Ready               Active                                  19.03.15
+uirue8iogj1lb6cykvislag94 *   formation           Ready               Active              Leader              19.03.15
+</p><p data-authorid="a.hFUGqWm1XBWWTLSm" class="author-a-hz70zz85zz71zqz87zm1z88zz66zz87zz87zz84zz76zz83zm"><b>anonyme:</b><span class="time author-a-hz70zz85zz71zqz87zm1z88zz66zz87zz87zz84zz76zz83zm">16:39</span> <a target="_blank" href="https://fr.wikipedia.org/wiki/JetBrains" rel="noreferrer noopener">https://fr.wikipedia.org/wiki/JetBrains</a></p><p data-authorid="a.hFUGqWm1XBWWTLSm" class="author-a-hz70zz85zz71zqz87zm1z88zz66zz87zz87zz84zz76zz83zm"><b>anonyme:</b><span class="time author-a-hz70zz85zz71zqz87zm1z88zz66zz87zz87zz84zz76zz83zm">16:46</span> <a target="_blank" href="https://www.jetbrains.com/help/idea/docker.html#run-containers" rel="noreferrer noopener">https://www.jetbrains.com/help/idea/docker.html#run-containers</a></p><p data-authorid="a.hFUGqWm1XBWWTLSm" class="author-a-hz70zz85zz71zqz87zm1z88zz66zz87zz87zz84zz76zz83zm"><b>anonyme:</b><span class="time author-a-hz70zz85zz71zqz87zm1z88zz66zz87zz87zz84zz76zz83zm">16:48</span> <a target="_blank" href="https://www.youtube.com/watch?v=X48VuDVv0do" rel="noreferrer noopener">https://www.youtube.com/watch?v=X48VuDVv0do</a> tuto K3S</p><p data-authorid="a.RBVz5arCj7Rl8ocW" class="author-a-z82zz66zz86zz122z5arz67zj7z82zl8ocz87z"><b>:</b><span class="time author-a-z82zz66zz86zz122z5arz67zj7z82zl8ocz87z">13:55</span> bonjour</p>
+            </div>
+            <div id="chatinputbox">
+                <form>
+                    <textarea id="chatinput" maxlength="999" data-l10n-id="pad.chat.writeMessage.placeholder" placeholder="Entrez votre message ici" aria-label="Entrez votre message ici"></textarea>
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!------------------------------------------------------------------>
+      <!-- SKIN VARIANTS BUILDER (Customize rendering, only for admins) -->
+      <!------------------------------------------------------------------>
+      
+      <div id="skin-variants" class="popup"><div class="popup-content">
+        <h1>Skin Builder</h1>
+
+        <div class="dropdowns-container">
+        
+        
+          <p class="dropdown-line">
+            <label class="skin-variant-container">toolbar</label>
+            <select class="skin-variant skin-variant-color" data-container="toolbar" style="display: none;">
+              <option value="super-light">Super Light</option>
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+              <option value="super-dark">Super Dark</option>
+            </select><div class="nice-select skin-variant skin-variant-color" tabindex="0"><span class="current">Super Light</span><ul class="list thin-scrollbar"><li data-value="super-light" class="option selected">Super Light</li><li data-value="light" class="option">Light</li><li data-value="dark" class="option">Dark</li><li data-value="super-dark" class="option">Super Dark</li></ul></div>
+          </p>
+        
+          <p class="dropdown-line">
+            <label class="skin-variant-container">background</label>
+            <select class="skin-variant skin-variant-color" data-container="background" style="display: none;">
+              <option value="super-light">Super Light</option>
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+              <option value="super-dark">Super Dark</option>
+            </select><div class="nice-select skin-variant skin-variant-color" tabindex="0"><span class="current">Super Light</span><ul class="list thin-scrollbar"><li data-value="super-light" class="option selected">Super Light</li><li data-value="light" class="option">Light</li><li data-value="dark" class="option">Dark</li><li data-value="super-dark" class="option">Super Dark</li></ul></div>
+          </p>
+        
+          <p class="dropdown-line">
+            <label class="skin-variant-container">editor</label>
+            <select class="skin-variant skin-variant-color" data-container="editor" style="display: none;">
+              <option value="super-light">Super Light</option>
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+              <option value="super-dark">Super Dark</option>
+            </select><div class="nice-select skin-variant skin-variant-color" tabindex="0"><span class="current">Super Light</span><ul class="list thin-scrollbar"><li data-value="super-light" class="option selected">Super Light</li><li data-value="light" class="option">Light</li><li data-value="dark" class="option">Dark</li><li data-value="super-dark" class="option">Super Dark</li></ul></div>
+          </p>
+        
+        </div>
+
+        <p>
+            <input type="checkbox" id="skin-variant-full-width" class="skin-variant">
+            <label for="skin-variant-full-width">Full Width Editor</label>
+        </p>
+
+        <p>
+          <label>Result to copy in settings.json</label>
+          <input id="skin-variants-result" type="text" readonly="" class="disabled">
+        </p>
+      </div></div>
+      
+
+      
+
+  <div id="gritter-container" class="bottom"></div></div> <!-- End of #editorcontainerbox -->
+
+  
+
+
+  <!----------------------------->
+  <!-------- JAVASCRIPT --------->
+  <!----------------------------->
+
+  
+
+  <script type="text/javascript" src="./DOCKER _ Etherpad_files/require-kernel.js"></script>
+  <script type="text/javascript" src="./DOCKER _ Etherpad_files/socket.io.js"></script>
+
+  <!-- Include base packages manually (this help with debugging) -->
+  <script type="text/javascript" src="./DOCKER _ Etherpad_files/pad.js"></script>
+  <script type="text/javascript" src="./DOCKER _ Etherpad_files/ace2_common.js"></script>
+
+  
+  <script type="text/javascript" src="./DOCKER _ Etherpad_files/pad(2).js"></script>
+  
+
+  <!-- Bootstrap page -->
+  <script type="text/javascript">
+      // @license magnet:?xt=urn:btih:8e4f440f4c65981c5bf93c76d35135ba5064d8b7&dn=apache-2.0.txt
+      var clientVars = {
+        // This is needed to fetch /pluginfw/plugin-definitions.json, which happens before the
+        // server sends the CLIENT_VARS message.
+        randomVersionString: "d62e31e8",
+      };
+      (function () {
+        var pathComponents = location.pathname.split('/');
+
+        // Strip 'p' and the padname from the pathname and set as baseURL
+        var baseURL = pathComponents.slice(0,pathComponents.length-2).join('/') + '/';
+
+        require.setRootURI(baseURL + "javascripts/src");
+        require.setLibraryURI(baseURL + "javascripts/lib");
+        require.setGlobalKeyPath("require");
+
+        $ = jQuery = require('ep_etherpad-lite/static/js/rjquery').jQuery; // Expose jQuery #HACK
+        browser = require('ep_etherpad-lite/static/js/vendors/browser');
+
+        var plugins = require('ep_etherpad-lite/static/js/pluginfw/client_plugins');
+        var hooks = require('ep_etherpad-lite/static/js/pluginfw/hooks');
+
+        plugins.baseURL = baseURL;
+        plugins.update(function () {
+          // Mechanism for tests to register hook functions (install fake plugins).
+          window._postPluginUpdateForTestingDone = false;
+          if (window._postPluginUpdateForTesting != null) window._postPluginUpdateForTesting();
+          window._postPluginUpdateForTestingDone = true;
+          // Call documentReady hook
+          $(function() {
+            hooks.aCallAll('documentReady');
+          });
+
+          var pad = require('ep_etherpad-lite/static/js/pad');
+          pad.baseURL = baseURL;
+          pad.init();
+        });
+
+        /* TODO: These globals shouldn't exist. */
+        pad = require('ep_etherpad-lite/static/js/pad').pad;
+        chat = require('ep_etherpad-lite/static/js/chat').chat;
+        padeditbar = require('ep_etherpad-lite/static/js/pad_editbar').padeditbar;
+        padimpexp = require('ep_etherpad-lite/static/js/pad_impexp').padimpexp;
+        require('ep_etherpad-lite/static/js/skin_variants');
+
+      }());
+      // @license-end
+  </script>
+  <div style="display:none"><a href="https://etherpad.wikimedia.org/javascript" data-jslicense="1">JavaScript license information</a></div>
+  
+
+
+</body></html>
