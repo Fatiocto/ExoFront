@@ -1,0 +1,19 @@
+.productCard {
+  width: 18rem;
+  color: black;
+  justify-content: center;
+  align-items: center;
+}
+
+.productCardBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.productImage {
+  float: left;
+  width:  100px;
+  height: 100px;
+  object-fit: cover;
+}
