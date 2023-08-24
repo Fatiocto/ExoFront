@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEMPERATURE</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+
+<body>
+
+    <form>
+        <label for="fahrenheit">farhenheit</label>
+        <input id="fah" type="number"value=""
+        oninput="converterFtoC(this.value)"
+        onchange="converterFtoC(this.value)">
+    </form>
+
+    Celsius : <span id="celsius"></span>
+
+    <form>
+        <label for="celsius">celsius</label>
+        <input id="cel" type="number"value=""
+        oninput="converterCtoF(this.value)"
+        onchange="converterCtoF(this.value)">
+    </form>
+
+    Farhenheit : <span id="farhenheit"></span>
+
+    <script src="temp.js"></script>
+    
+</body>
+</html>
